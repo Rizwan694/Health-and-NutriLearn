@@ -21,8 +21,8 @@ export function AppHeader() {
           >
             <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
             <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-            <path d="M12 8c0-2.5 2-2.5 2-5"></path>
-            <path d="M12 8c0 2.5-2 2.5-2 5"></path>
+            <path d="M12 8v4" />
+            <path d="m15 8-6 6" />
           </svg>
           <span className="font-headline text-xl font-bold">NutriLearn</span>
         </Link>
