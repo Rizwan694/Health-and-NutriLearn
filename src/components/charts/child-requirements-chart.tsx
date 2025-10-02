@@ -6,10 +6,10 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 const data = [
   { ageGroup: '1-3 years', calories: 1000 },
   { ageGroup: '4-8 years', calories: 1400 },
-  { ageGroup: '9-13 years (Girls)', calories: 1600 },
-  { ageGroup: '9-13 years (Boys)', calories: 1800 },
-  { ageGroup: '14-18 years (Girls)', calories: 1800 },
-  { ageGroup: '14-18 years (Boys)', calories: 2200 },
+  { ageGroup: '9-13 (Girls)', calories: 1600 },
+  { ageGroup: '9-13 (Boys)', calories: 1800 },
+  { ageGroup: '14-18 (Girls)', calories: 1800 },
+  { ageGroup: '14-18 (Boys)', calories: 2200 },
 ];
 
 export function ChildRequirementsChart() {
@@ -24,6 +24,7 @@ export function ChildRequirementsChart() {
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
               data={data}
+              layout="vertical"
               margin={{
                 top: 5,
                 right: 30,
@@ -32,8 +33,8 @@ export function ChildRequirementsChart() {
               }}
             >
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="ageGroup" />
-              <YAxis />
+              <XAxis type="number" />
+              <YAxis dataKey="ageGroup" type="category" width={100} interval={0} />
               <Tooltip
                 contentStyle={{
                   background: 'hsl(var(--background))',
