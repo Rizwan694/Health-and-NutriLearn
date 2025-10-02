@@ -26,7 +26,7 @@ import {
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Loader2, Sparkles } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 const formSchema = z.object({
   age: z.coerce.number().min(1, 'Age is required').max(120),
@@ -66,6 +66,7 @@ function SubmitButton() {
 export function RequirementCalculator() {
   const { toast } = useToast();
   const [state, formAction] = useFormState(getPersonalizedRecommendationsAction, initialState);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -86,6 +87,14 @@ export function RequirementCalculator() {
     }
   }, [state, toast]);
 
+  const onFormSubmit = (data: FormValues) => {
+    const formData = new FormData();
+    formData.append('age', String(data.age));
+    formData.append('gender', data.gender);
+    formData.append('activityLevel', data.activityLevel);
+    formAction(formData);
+  };
+
   return (
     <div>
       <h2 className="font-headline text-3xl font-bold text-center mb-2">
@@ -97,7 +106,8 @@ export function RequirementCalculator() {
 
       <Form {...form}>
         <form
-          action={formAction}
+          ref={formRef}
+          onSubmit={form.handleSubmit(onFormSubmit)}
           className="space-y-6"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
