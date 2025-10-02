@@ -19,10 +19,10 @@ export function AppHeader() {
             strokeLinejoin="round"
             className="h-6 w-6 text-primary"
           >
-            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
-            <path d="M12 13a4 4 0 0 0-4 4h8a4 4 0 0 0-4-4z" />
-            <path d="M12 7v6" />
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+            <path d="M12 8c0-2.5 2-2.5 2-5"></path>
+            <path d="M12 8c0 2.5-2 2.5-2 5"></path>
           </svg>
           <span className="font-headline text-xl font-bold">NutriLearn</span>
         </Link>
