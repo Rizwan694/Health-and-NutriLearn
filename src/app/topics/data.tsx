@@ -209,6 +209,12 @@ export const TOPICS: Record<string, Topic> = {
         <p>Smoking tobacco is a leading cause of preventable death worldwide. It is a major risk factor for heart attacks, strokes, chronic obstructive pulmonary disease (COPD), and numerous cancers, including lung, throat, and bladder cancer. There is no safe level of tobacco use.</p>
         <h4 className="font-headline">Drug Addiction</h4>
         <p>Drug addiction, or substance use disorder, is a disease that affects a person's brain and behavior and leads to an inability to control the use of a legal or illegal drug or medicine. Substances like alcohol, opioids, and stimulants can cause serious health problems, damage relationships, and lead to overdose and death.</p>
+        <h4 className="font-headline">Alcohol Abuse</h4>
+        <p>Excessive alcohol consumption can lead to chronic diseases such as liver cirrhosis, pancreatitis, various cancers, and high blood pressure. It also impairs judgment and coordination, increasing the risk of accidents and injuries.</p>
+        <h4 className="font-headline">Poor Diet and Obesity</h4>
+        <p>A diet high in processed foods, sugar, and unhealthy fats contributes to obesity, type 2 diabetes, heart disease, and certain types of cancer. Obesity is a major health hazard that puts a strain on virtually every system in the body.</p>
+        <h4 className="font-headline">Lack of Physical Activity</h4>
+        <p>A sedentary lifestyle is a significant risk factor for many chronic diseases. Regular physical activity helps maintain a healthy weight, strengthens the cardiovascular system, improves mental health, and reduces the risk of conditions like heart disease, diabetes, and osteoporosis.</p>
       </>
     ),
   },
