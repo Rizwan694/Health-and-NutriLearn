@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <div className="container mx-auto">
-      <section className="relative mb-12 h-80 w-full overflow-hidden rounded-xl">
+      <section className="relative mb-12 h-64 md:h-80 w-full overflow-hidden rounded-xl">
         {heroImage && (
           <Image
             src={heroImage.imageUrl}
@@ -21,10 +21,10 @@ export default function Home() {
           />
         )}
         <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center text-white p-4">
-          <h1 className="font-headline text-5xl md:text-7xl font-bold drop-shadow-lg">
+          <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl font-bold drop-shadow-lg">
             Welcome to NutriLearn
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-primary-foreground/90">
+          <p className="mt-4 max-w-2xl text-md md:text-lg text-primary-foreground/90">
             Your comprehensive guide to robust health, nutrition, and well-being.
             Start by calculating your personal dietary needs.
           </p>
