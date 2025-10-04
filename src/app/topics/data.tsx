@@ -8,6 +8,52 @@ type Topic = {
 };
 
 export const TOPICS: Record<string, Topic> = {
+  'good-health-secrets': {
+    title: 'The Secret of Good Health and Long Life',
+    content: (
+      <>
+        <p className="lead text-lg text-muted-foreground">
+          The secret to good health and a long life is hidden in the following
+          key points:
+        </p>
+        <ol className="list-decimal list-inside space-y-4">
+          <li>
+            <strong className="font-headline">Your Balanced Diet:</strong> The
+            diet which consists of Carbohydrates, proteins, fats, vitamins,
+            minerals, fiber, and water. Avoid too much fatty foods (especially
+            rich in cholesterol) as they cause heart diseases.
+          </li>
+          <li>
+            <strong className="font-headline">The Quality of Food You Eat:</strong>{' '}
+            Eat fresh and pure food rather than stale and processed one. Drink
+            safe water. A large number of diseases are caused by contaminated
+            food and water.
+          </li>
+          <li>
+            <strong className="font-headline">
+              Your Personal and Surrounding Environment:
+            </strong>{' '}
+            Be cautious about your personal as well as environmental condition.
+            Always keep a high degree of your personal and surroundings
+            sanitation.
+          </li>
+          <li>
+            <strong className="font-headline">
+              Right Amount of Exercises:
+            </strong>{' '}
+            Do walk and take right amount of exercises daily.
+          </li>
+          <li>
+            <strong className="font-headline">Your Habits:</strong> Avoid over
+            eating, smoking, drug addiction, sleeping late at night. Avoid
+            sneezing and coughing without covering your mouth. Keep good
+            company. Always stay away from stress and tension and keep yourself
+            happy.
+          </li>
+        </ol>
+      </>
+    ),
+  },
   'food-introduction': {
     title: 'What is Food?',
     content: (

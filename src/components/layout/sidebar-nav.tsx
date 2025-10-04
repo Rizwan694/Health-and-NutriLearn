@@ -27,6 +27,7 @@ import {
   AlertTriangle,
   type LucideIcon,
   Home,
+  Key,
 } from 'lucide-react';
 
 type NavItem = {
@@ -35,7 +36,11 @@ type NavItem = {
   icon: LucideIcon;
 };
 
-const navItems: NavItem[] = [
+const mainNav: NavItem[] = [
+    { slug: 'good-health-secrets', title: 'Health Secrets', icon: Key },
+]
+
+const topicNav: NavItem[] = [
   { slug: 'food-introduction', title: 'What is Food?', icon: Apple },
   { slug: 'food-importance', title: 'Importance of Food', icon: Heart },
   { slug: 'food-constituents', title: 'Constituents of Food', icon: Layers },
@@ -73,7 +78,21 @@ export function SidebarNav() {
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
-          {navItems.map((item) => (
+          {mainNav.map((item) => (
+            <SidebarMenuItem key={item.slug}>
+              <SidebarMenuButton
+                asChild
+                isActive={pathname === `/topics/${item.slug}`}
+                tooltip={item.title}
+              >
+                <Link href={`/topics/${item.slug}`}>
+                  <item.icon />
+                  <span>{item.title}</span>
+                </Link>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          ))}
+          {topicNav.map((item) => (
             <SidebarMenuItem key={item.slug}>
               <SidebarMenuButton
                 asChild
