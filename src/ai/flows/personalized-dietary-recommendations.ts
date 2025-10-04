@@ -67,12 +67,15 @@ const dietaryRecommendationsPrompt = ai.definePrompt({
   Then, create a daily dietary chart. IMPORTANT: Instead of using the term "servings", specify the quantity in concrete terms like grams, numbers, or volume (e.g., "200g", "2-3 pieces", "1 glass (250ml)").
 
   The chart should be in the following order and include specific recommendations for:
-  - Fruits
-  - Vegetables
-  - Grains (e.g., bread, rice)
-  - Protein (e.g., meat, pulses, eggs)
-  - Dairy (e.g., milk)
-  - Beverages (e.g., juice, water)
+  - Carbohydrates (e.g., bread, rice, grains)
+  - Proteins (e.g., meat, pulses, eggs)
+  - Fats (e.g., oils, nuts)
+  - Vitamins (e.g., from fruits and vegetables)
+  - Minerals (e.g., from dairy and other sources)
+  - Fiber (mention prebiotics and fiber-rich foods)
+  - Water/Beverages
+
+  In the Dairy recommendations (under Minerals or as a separate point if more logical), please mention yogurt as a source of probiotics.
 
   Consider the following factors when making your recommendations:
   - Caloric needs
