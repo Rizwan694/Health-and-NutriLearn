@@ -29,7 +29,7 @@ const DailyDietSchema = z.object({
   recommendation: z
     .string()
     .describe(
-      'Recommended daily intake for this category, e.g., 2-3 servings, 200g.'
+      'Recommended daily intake for this category, e.g., "2-3 pieces", "200g", "1 glass (250ml)".'
     ),
 });
 
@@ -64,7 +64,9 @@ const dietaryRecommendationsPrompt = ai.definePrompt({
 
   First, provide a summary of the overall dietary plan.
 
-  Then, create a daily dietary chart with specific recommendations for the following categories:
+  Then, create a daily dietary chart. IMPORTANT: Instead of using the term "servings", specify the quantity in concrete terms like grams, numbers, or volume (e.g., "200g", "2-3 pieces", "1 glass (250ml)").
+
+  The chart should be in the following order and include specific recommendations for:
   - Fruits
   - Vegetables
   - Grains (e.g., bread, rice)
