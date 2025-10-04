@@ -6,7 +6,7 @@ import { SidebarNav } from '@/components/layout/sidebar-nav';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'NutriLearn',
+  title: 'Health and NutriLearn',
   description: 'Your guide to robust health and nutrition.',
 };
 

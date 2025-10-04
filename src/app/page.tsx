@@ -22,7 +22,7 @@ export default function Home() {
         )}
         <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center text-white p-4">
           <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl font-bold drop-shadow-lg">
-            Welcome to NutriLearn
+            Welcome to Health and NutriLearn
           </h1>
           <p className="mt-4 max-w-2xl text-md md:text-lg text-primary-foreground/90">
             Your comprehensive guide to robust health, nutrition, and well-being.
