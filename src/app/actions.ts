@@ -1,7 +1,11 @@
 'use server';
 
-import { getPersonalizedDietaryRecommendations, type DietaryRecommendationInput } from '@/ai/flows/personalized-dietary-recommendations';
-import { z } from 'zod';
+import {
+  getPersonalizedDietaryRecommendations,
+  type DietaryRecommendationInput,
+  type DietaryRecommendationOutput,
+} from '@/ai/flows/personalized-dietary-recommendations';
+import {z} from 'zod';
 
 const formSchema = z.object({
   age: z.coerce.number().min(1).max(120),
@@ -11,7 +15,7 @@ const formSchema = z.object({
 
 type State = {
   success: boolean;
-  recommendations?: string;
+  recommendations?: DietaryRecommendationOutput;
   error?: string | null;
 };
 
@@ -33,17 +37,19 @@ export async function getPersonalizedRecommendationsAction(
   }
 
   try {
-    const result = await getPersonalizedDietaryRecommendations(validatedFields.data as DietaryRecommendationInput);
-    if (result.recommendations) {
-        return {
-            success: true,
-            recommendations: result.recommendations,
-        };
+    const result = await getPersonalizedDietaryRecommendations(
+      validatedFields.data as DietaryRecommendationInput
+    );
+    if (result.summary && result.dailyChart) {
+      return {
+        success: true,
+        recommendations: result,
+      };
     } else {
-        return {
-            success: false,
-            error: 'Could not generate recommendations. Please try again.',
-        }
+      return {
+        success: false,
+        error: 'Could not generate recommendations. Please try again.',
+      };
     }
   } catch (e) {
     console.error(e);

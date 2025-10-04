@@ -22,9 +22,28 @@ export type DietaryRecommendationInput = z.infer<
   typeof DietaryRecommendationInputSchema
 >;
 
-const DietaryRecommendationOutputSchema = z.object({
-  recommendations: z.string().describe('Personalized dietary recommendations.'),
+const DailyDietSchema = z.object({
+  category: z
+    .string()
+    .describe('Food category, e.g., Fruits, Vegetables, Grains.'),
+  recommendation: z
+    .string()
+    .describe(
+      'Recommended daily intake for this category, e.g., 2-3 servings, 200g.'
+    ),
 });
+
+const DietaryRecommendationOutputSchema = z.object({
+  summary: z
+    .string()
+    .describe('A summary of the personalized dietary recommendations.'),
+  dailyChart: z
+    .array(DailyDietSchema)
+    .describe(
+      'A daily dietary chart with recommendations for various food categories.'
+    ),
+});
+
 export type DietaryRecommendationOutput = z.infer<
   typeof DietaryRecommendationOutputSchema
 >;
@@ -42,6 +61,16 @@ const dietaryRecommendationsPrompt = ai.definePrompt({
   prompt: `You are a registered dietitian providing personalized dietary recommendations.
 
   Based on the user's age, gender, and activity level, provide detailed dietary suggestions for a balanced intake.
+
+  First, provide a summary of the overall dietary plan.
+
+  Then, create a daily dietary chart with specific recommendations for the following categories:
+  - Fruits
+  - Vegetables
+  - Grains (e.g., bread, rice)
+  - Protein (e.g., meat, pulses, eggs)
+  - Dairy (e.g., milk)
+  - Beverages (e.g., juice, water)
 
   Consider the following factors when making your recommendations:
   - Caloric needs
