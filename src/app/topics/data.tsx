@@ -257,8 +257,15 @@ export const TOPICS: Record<string, Topic> = {
         <p>Drug addiction, or substance use disorder, is a disease that affects a person's brain and behavior and leads to an inability to control the use of a legal or illegal drug or medicine. Substances like alcohol, opioids, and stimulants can cause serious health problems, damage relationships, and lead to overdose and death.</p>
         <h4 className="font-headline">Alcohol Abuse</h4>
         <p>Excessive alcohol consumption can lead to chronic diseases such as liver cirrhosis, pancreatitis, various cancers, and high blood pressure. It also impairs judgment and coordination, increasing the risk of accidents and injuries.</p>
-        <h4 className="font-headline">Poor Diet and Obesity</h4>
-        <p>A diet high in processed foods, sugar, and unhealthy fats contributes to obesity, type 2 diabetes, heart disease, and certain types of cancer. Obesity is a major health hazard that puts a strain on virtually every system in the body.</p>
+        <h4 className="font-headline">Poor Diet, Obesity, and Diabetes</h4>
+        <p>A diet high in processed foods, sugar, and unhealthy fats is a primary contributor to obesity and Type 2 Diabetes, which are major health hazards that put a strain on virtually every system in the body. These conditions increase the risk of heart disease, stroke, kidney disease, and certain types of cancer.</p>
+        <h5 className="font-bold mt-4">How to Keep Safe:</h5>
+        <ul className="list-disc list-inside space-y-2">
+            <li><strong>Prioritize Whole Foods:</strong> Build your diet around fruits, vegetables, lean proteins, and whole grains.</li>
+            <li><strong>Limit Sugar and Processed Foods:</strong> Reduce intake of sugary drinks, snacks, and highly processed meals that are high in empty calories and unhealthy fats.</li>
+            <li><strong>Control Portion Sizes:</strong> Be mindful of how much you eat in one sitting to avoid over-consumption of calories.</li>
+            <li><strong>Stay Hydrated with Water:</strong> Choose water over sugary beverages to reduce calorie intake and stay properly hydrated.</li>
+        </ul>
         <h4 className="font-headline">Lack of Physical Activity</h4>
         <p>A sedentary lifestyle is a significant risk factor for many chronic diseases. Regular physical activity helps maintain a healthy weight, strengthens the cardiovascular system, improves mental health, and reduces the risk of conditions like heart disease, diabetes, and osteoporosis.</p>
       </>
