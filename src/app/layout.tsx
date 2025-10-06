@@ -8,6 +8,9 @@ import { Toaster } from '@/components/ui/toaster';
 export const metadata: Metadata = {
   title: 'Health and NutriLearn',
   description: 'Your guide to robust health and nutrition.',
+other: {
+  'google-adsense-account': 'content="ca-pub-5240590917046948',
+},
 };
 
 export default function RootLayout({
