@@ -83,8 +83,12 @@ export function RequirementCalculator() {
         Fill in your details to receive AI-powered dietary recommendations.
       </p>
 
-      <form class="space-y-6" action enctype="multipart/form-data" method="POST">
-       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <form 
+  action={formAction}
+  method="POST"
+  encType="multipart/form-data"
+  className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="space-y-2">
             <Label htmlFor="age">Age</Label>
             <Input
