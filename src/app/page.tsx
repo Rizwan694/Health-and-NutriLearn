@@ -1,3 +1,5 @@
+"use client";
+import { useEffect } from "react";
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -15,7 +17,7 @@ export default function Home() {
     }
   }, []);
 
-  return (
+  return(
     <div className="container mx-auto">
       <section className="relative mb-12 h-64 md:h-80 w-full overflow-hidden rounded-xl">
         {heroImage && (
