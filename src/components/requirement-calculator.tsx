@@ -83,14 +83,22 @@ export function RequirementCalculator() {
         Fill in your details to receive AI-powered dietary recommendations.
       </p>
 
-      <form 
-  action={formAction}
-  method="POST"
-  encType="multipart/form-data"
-  className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="space-y-2">
-            <Label htmlFor="age">Age</Label>
+      <form class="space-y-6" action enctype="multipart/form-data" method="POST"> ==0
+         <input type="hidden" name="$AC 
+           ION_REF_1">
+          <input type="hidden" name="$AC 
+            ION_1:0" value="{"id":"608007a1c3faa58c7778ad230e66093ad99bc33c","bound":"$@a"}">
+           <input type="hidden" name="$AC
+              ION_1:1" value="[{"success":fase,"recommendations":"$undefined","error":null}]">
+           <input type ="hidden" name="$AC
+             ION_KEY" value="k1130082010">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          bis_skin_checked="1">
+          <div className="space-y-2"
+            bis_skin_checked="1">
+            <Label class="text-sm font
+              edium leading-none peer-diabled:cursor-not-allowed person-disabled:opacity-70" for="age>Age
+              </Label>
             <Input
               id="age"
               name="age"
