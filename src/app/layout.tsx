@@ -24,7 +24,12 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
-      </head>
+      <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5240590917046948"
+          crossOrigin="anonymous"
+        ></script>
+       </head>
       <body className="font-body antialiased" suppressHydrationWarning>
         <SidebarProvider>
           <Sidebar>
