@@ -1,6 +1,5 @@
 'use client';
-
-import { useFormState, useFormStatus } from 'react-dom';
+import { useState, useEffect } from 'react';
 import { getPersonalizedRecommendationsAction } from '@/app/actions';
 
 import { Button } from '@/components/ui/button';
@@ -22,7 +21,6 @@ import {
 } from '@/components/ui/card';
 import { Loader2, Sparkles } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
-import { useEffect } from 'react';
 import {
   Table,
   TableBody,
@@ -32,14 +30,29 @@ import {
   TableRow,
 } from '@/components/ui/table';
 
-const initialState = {
+// TypeScript types for recommendations and state
+interface Recommendation {
+  summary: string;
+  dailyChart: {
+    category: string;
+    recommendation: string;
+  }[];
+}
+
+interface State {
+  success: boolean;
+  recommendations?: Recommendation; // optional
+  error: string | null;
+}
+
+const initialState: State = {
   success: false,
   recommendations: undefined,
   error: null,
 };
 
 function SubmitButton() {
-  const { pending } = useFormStatus();
+  const [ pending, setPending ] = useState(false);
   return (
     <Button type="submit" disabled={pending} className="w-full">
       {pending ? (
@@ -59,11 +72,8 @@ function SubmitButton() {
 
 export function RequirementCalculator() {
   const { toast } = useToast();
-  const [state, formAction] = useFormState(
-    getPersonalizedRecommendationsAction,
-    initialState
-  );
-
+  const [age, setAge] = useState(''); 
+  const [state, setState] = useState<State> (initialState);
   useEffect(() => {
     if (!state.success && state.error) {
       toast({
@@ -82,33 +92,29 @@ export function RequirementCalculator() {
       <p className="text-center text-muted-foreground mb-6">
         Fill in your details to receive AI-powered dietary recommendations.
       </p>
-      
-    <form class="space-y-6" action enctype="multipart/form-data" method="POST"> ==0
-         <input type="hidden" name="$AC 
-           ION_REF_1">
-          <input type="hidden" name="$AC 
-            ION_1:0" value="{"id":"608007a1c3faa58c7778ad230e66093ad99bc33c","bound":"$@a"}">
-           <input type="hidden" name="$AC
-              ION_1:1" value="[{"success":fase,"recommendations":"$undefined","error":null}]">
-           <input type ="hidden" name="$AC
-             ION_KEY" value="k1130082010">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6"
-          bis_skin_checked="1">
-          <div className="space-y-2"
-            bis_skin_checked="1">
-            <Label class="text-sm font
-              edium leading-none peer-diabled:cursor-not-allowed person-disabled:opacity-70" for="age>Age
-              </Label>
-            <Input
-              id="age"
-              name="age"
-              type="number"
-              placeholder="e.g., 25"
-              required
-            />
-          </div>
+    
+    <form className="space-y-6" encType="multipart/form-data" method="POST"> ==0
+         <input type="hidden" name="$ACTION_REF_1"/>
+          <input type="hidden" name="$ACTION_1:0" value='{"id":"608007a1c3faa58c7778ad230e66093ad99bc33c","bound":"$@a"}'/>
+           <input type="hidden" name="$ACTION_1:1" value='[{"success":false,"recommendations":"$undefined","error":null}]'/>
+           
+           <input type ="hidden" name="$ACTION_KEY" value="k1130082010"/>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="space-y-2"> 
+            <Label className="text-sm font edium leading-none peer-diabled:cursor-not-allowed person-disabled:opacity-70" htmlFor="age"> Age 
+            </Label>
 
-          <div className="space-y-2">
+           <Input
+           id="age"
+           name="age"
+           type="number"
+           placeholder="e.g., 25"
+           value={age}                   
+           onChange={(e) => setAge(e.target.value)}
+           required
+          />
+          </div>
+         <div className="space-y-2">
             <Label htmlFor="gender">Gender</Label>
             <Select name="gender" required>
               <SelectTrigger id="gender">
@@ -161,7 +167,7 @@ export function RequirementCalculator() {
           </CardHeader>
           <CardContent>
             <div className="prose prose-sm max-w-none text-foreground whitespace-pre-wrap mb-6">
-              {state.recommendations.summary}
+              {state.recommendations?.summary}
             </div>
 
             <h3 className="font-headline text-xl font-bold mb-4">Daily Dietary Chart</h3>
