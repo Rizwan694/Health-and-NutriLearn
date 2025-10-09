@@ -82,8 +82,8 @@ export function RequirementCalculator() {
       <p className="text-center text-muted-foreground mb-6">
         Fill in your details to receive AI-powered dietary recommendations.
       </p>
-
-      <form class="space-y-6" action enctype="multipart/form-data" method="POST"> ==0
+      
+    <form class="space-y-6" action enctype="multipart/form-data" method="POST"> ==0
          <input type="hidden" name="$AC 
            ION_REF_1">
           <input type="hidden" name="$AC 
@@ -146,7 +146,7 @@ export function RequirementCalculator() {
         </div>
         <SubmitButton />
       </form>
-
+           
       {state.success && state.recommendations && (
         <Card className="mt-8 bg-primary/5">
           <CardHeader>
