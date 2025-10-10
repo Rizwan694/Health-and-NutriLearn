@@ -4,8 +4,7 @@ import { SidebarProvider, Sidebar, SidebarInset } from '@/components/ui/sidebar'
 import { AppHeader } from '@/components/layout/header';
 import { SidebarNav } from '@/components/layout/sidebar-nav';
 import { Toaster } from '@/components/ui/toaster';
-import { Analytics } from '@vercel/analytics/next';
-
+import { Analytics } from '@vercel/analytics/react';
 export const metadata: Metadata = {
   title: 'Health and NutriLearn',
   description: 'Your guide to robust health and nutrition.',
